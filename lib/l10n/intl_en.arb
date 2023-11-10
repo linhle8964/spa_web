@@ -1,14 +1,10 @@
 {
     "@@locale": "en",
     "@@last_modified": "",
-    "msgap001": "Home",
-    "@msgap001": {
-      "type": "text",
-      "placeholders": {}
-    },
-    "msgap002": "Chat",
-    "@msgap002": {
-      "type": "text",
-      "placeholders": {}
-    }
+    "Home": "Home",
+    "Services": "Services",
+    "About": "About",
+    "Contact": "Contact",
+    "banner_title": "A Wonderful Place For Relaxation",
+    "banner_content": "Dedicated to personal wellness, Amanjena’s spa facilities are serene and timeless, designed to calm, soothe and rejuvenate while expert therapists work on restoring optimal wellbeing. Treatments include massages, facials scrubs and wraps, as well as manicures and pedicures. "
 }

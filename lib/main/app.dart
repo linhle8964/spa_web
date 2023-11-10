@@ -5,6 +5,8 @@ import 'package:students/common/core/constants.dart';
 import 'package:students/common/core/routes.dart';
 import 'package:students/common/data/local_secure_storage.dart';
 import 'package:students/env/env_state.dart';
+import 'package:students/generated/fonts.gen.dart';
+import 'package:students/generated/l10n.dart';
 import 'package:students/utils/app_colors.dart';
 
 late StateNotifierProvider<ApiClient, EnvState> envProvider;
@@ -40,16 +42,18 @@ class App extends ConsumerWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.white,
+        fontFamily: FontFamily.playfairDisplay,
         appBarTheme: const AppBarTheme(
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.black),
           color: AppColors.backGround, //<-- SEE HERE
         ),
       ),
+      locale: const Locale('vi', 'VN'),
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.dashboardScreen,
       routes: Routes.routes,
-      localizationsDelegates: const [],
+      localizationsDelegates: const [L10n.delegate],
       navigatorObservers: const [],
       builder: (context, child) => GestureDetector(
         // dismiss keyboard when tap outside whole app

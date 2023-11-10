@@ -3,10 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:students/components/error_indicator.dart';
 
 import 'package:students/generated/assets.gen.dart';
 
 import 'package:students/screens/dashboard/dashboard_state_notifier.dart';
+import 'package:students/screens/dashboard/widgets/spa_banner.dart';
 import 'package:students/screens/home/home_screen.dart';
 
 import 'package:students/utils/app_colors.dart';
@@ -57,6 +59,15 @@ class _DashBoardScreenState extends ConsumerState<DashBoardScreen>
 
   @override
   Widget build(BuildContext context) {
+    return Material(
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SpaBannerWidget(),
+          ],
+        ),
+      ),
+    );
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
