@@ -8,6 +8,9 @@ import 'package:students/components/error_indicator.dart';
 import 'package:students/generated/assets.gen.dart';
 
 import 'package:students/screens/dashboard/dashboard_state_notifier.dart';
+import 'package:students/screens/dashboard/widgets/about_us_widget.dart';
+import 'package:students/screens/dashboard/widgets/contact_info_widget.dart';
+import 'package:students/screens/dashboard/widgets/our_service_widget.dart';
 import 'package:students/screens/dashboard/widgets/spa_banner.dart';
 import 'package:students/screens/home/home_screen.dart';
 
@@ -37,6 +40,10 @@ class _DashBoardScreenState extends ConsumerState<DashBoardScreen>
     DashboardItem.profile,
   ];
   late TabController _tabController;
+  late ScrollController _scrollController;
+  var serviceKey = GlobalKey();
+  var aboutKey = GlobalKey();
+  var contactKey = GlobalKey();
 
   // 3 Pages in dashboard
   static const pages = [
@@ -55,15 +62,26 @@ class _DashBoardScreenState extends ConsumerState<DashBoardScreen>
     _tabController =
         TabController(length: 3, vsync: this, initialIndex: widget.index ?? 0);
     WidgetsBinding.instance.addObserver(this);
+    _scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _scrollController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Material(
       child: SingleChildScrollView(
+        controller: _scrollController,
         child: Column(
           children: [
-            const SpaBannerWidget(),
+            SpaBannerWidget(scrollController: _scrollController, aboutKey: aboutKey, contactKey: contactKey, serviceKey: serviceKey,),
+            OurServiceWidget(serviceKey: serviceKey,),
+            AboutUsWidget(aboutKey: aboutKey,),
+            ContactInfoWidget(contactKey: contactKey,),
           ],
         ),
       ),

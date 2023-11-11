@@ -3,7 +3,12 @@ import 'package:students/generated/assets.gen.dart';
 import 'package:students/generated/l10n.dart';
 
 class SpaBannerWidget extends StatelessWidget {
-  const SpaBannerWidget({super.key});
+  const SpaBannerWidget({super.key, required this.scrollController, required this.serviceKey, required this.aboutKey, required this.contactKey,});
+
+  final ScrollController scrollController;
+  final GlobalKey serviceKey;
+  final GlobalKey aboutKey;
+  final GlobalKey contactKey;
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +41,21 @@ class SpaBannerWidget extends StatelessWidget {
                         ),
                         _item(
                           text: L10n.of(context).Services,
+                          onTap: () {
+                          ensureVisible(serviceKey.currentContext);
+                          }
                         ),
                         _item(
                           text: L10n.of(context).About,
+                          onTap: () {
+                            ensureVisible(aboutKey.currentContext);
+                          }
                         ),
                         _item(
                           text: L10n.of(context).Contact,
+                          onTap: () {
+                            ensureVisible(contactKey.currentContext);
+                          }
                         ),
                       ],
                     ),
@@ -72,6 +86,18 @@ class SpaBannerWidget extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  void ensureVisible(BuildContext? context) {
+    if(context == null) {
+      return;
+    }
+
+    Scrollable.ensureVisible(
+      context,
+      duration: const Duration(milliseconds: 400),
+      curve: Curves.easeInOut,
     );
   }
 

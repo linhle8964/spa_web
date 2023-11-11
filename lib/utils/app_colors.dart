@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AppColors {
   AppColors._();
   static const backGround = Color(0xfffff8f0);
-  static const backGround2 = Color(0xfffdefee);
+  static const backGround2 = Color(0xffFFE7DD);
   static const backGround3 = Color(0xfffef8f8);
   static const bgNav = Color(0xffc8d2a0);
 
@@ -32,4 +32,6 @@ class AppColors {
   static const orangeEFD19B = Color(0xFFEFD19B);
   static const Color lineColor4 = Color(0xFFE6EAE8);
   static const Color melonColor = Color(0xFFFA5075);
+
+  static const titleHighlightColor = Color(0xFF7D2410);
 }
