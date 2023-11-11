@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:students/generated/assets.gen.dart';
 import 'package:students/generated/l10n.dart';
+import 'package:students/screens/dashboard/widgets/spa_banner_menu_item.dart';
 
 class SpaBannerWidget extends StatelessWidget {
   const SpaBannerWidget({super.key, required this.scrollController, required this.serviceKey, required this.aboutKey, required this.contactKey,});
@@ -36,22 +37,22 @@ class SpaBannerWidget extends StatelessWidget {
                     flex: 7,
                     child: Row(
                       children: [
-                        _item(
-                          text: L10n.of(context).Home,
+                        SpaBannerMenuItem(
+                          text: L10n.of(context).Home, onTap: () {  },
                         ),
-                        _item(
+                        SpaBannerMenuItem(
                           text: L10n.of(context).Services,
                           onTap: () {
                           ensureVisible(serviceKey.currentContext);
                           }
                         ),
-                        _item(
+                        SpaBannerMenuItem(
                           text: L10n.of(context).About,
                           onTap: () {
                             ensureVisible(aboutKey.currentContext);
                           }
                         ),
-                        _item(
+                        SpaBannerMenuItem(
                           text: L10n.of(context).Contact,
                           onTap: () {
                             ensureVisible(contactKey.currentContext);
@@ -101,15 +102,4 @@ class SpaBannerWidget extends StatelessWidget {
     );
   }
 
-  Widget _item({required String text, VoidCallback? onTap}) {
-    return Expanded(
-      child: InkWell(
-        onTap: onTap,
-        child: Text(
-          text,
-          style: const TextStyle(color: Colors.black, fontSize: 16),
-        ),
-      ),
-    );
-  }
 }

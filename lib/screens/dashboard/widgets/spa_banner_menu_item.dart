@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:students/components/app_text_style.dart';
+import 'package:students/utils/app_colors.dart';
 
 class SpaBannerMenuItem extends StatefulWidget {
   const SpaBannerMenuItem({super.key, required this.text, required this.onTap,});
@@ -18,10 +19,27 @@ class _SpaBannerMenuItemState extends State<SpaBannerMenuItem> {
   Widget build(BuildContext context) {
     return Expanded(
       child: MouseRegion(
-        onEnter: (value) => widget.onTap,
-        child: Text(
-          widget.text,
-          style: AppTextStyle.large.copyWith(fontWeight: FontWeight.normal),
+        onHover: (value) {
+          setState(() {
+            isHoover = true;
+          });
+        },
+        onExit: (value) {
+          setState(() {
+            isHoover = false;
+          });
+        },
+        child: InkWell(
+          onTap: widget.onTap,
+          child: Container(
+            color: isHoover ? AppColors.backGround2 : Colors.transparent,
+            padding: const EdgeInsets.all(10),
+            alignment: Alignment.center,
+            child: Text(
+              widget.text,
+              style: AppTextStyle.large.copyWith(fontWeight: FontWeight.normal),
+            ),
+          ),
         ),
       ),
     );

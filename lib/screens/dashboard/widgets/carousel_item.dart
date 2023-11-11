@@ -36,39 +36,33 @@ class _CarouselItemWidgetState extends State<CarouselItemWidget> {
           isHoover = false;
         });
       },
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(10)
-        ),
-        child: Row(children: [
-          Expanded(child: IconButton(icon: const Icon(Icons.arrow_back, color: Colors.white,), onPressed: () {
-            widget.carouselController.previousPage();
-          },)),
-          Expanded(flex: 3, child: isHoover ? _hooverWidget() : _defaultWidget()),
-          Expanded(child: IconButton(icon: const Icon(Icons.arrow_forward, color: Colors.white), onPressed: () {
-            widget.carouselController.nextPage();
-          },)),
-        ],),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        child: isHoover ? _hooverWidget() : _defaultWidget(),
       ),
     );
   }
 
   Widget _defaultWidget() {
-    return Image.asset(widget.serviceModel.image ?? '');
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(10),
+        image: DecorationImage(
+          image: AssetImage(
+            widget.serviceModel.image ?? '',
+          ),
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
   }
 
   Widget _hooverWidget() {
     return Stack(
       children: [
-        Container(
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: Colors.black,
-            borderRadius: BorderRadius.circular(10),
-            image: DecorationImage(image: AssetImage(widget.serviceModel.image ?? '', ), fit: BoxFit.contain)
-          ),
-        ),
+        _defaultWidget(),
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
