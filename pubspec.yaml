@@ -83,6 +83,7 @@ flutter:
     - assets/images/
     - assets/svg/
     - assets/dummy_image/
+    - assets/social_media_icon/
 
   fonts:
     - family: Playfair Display

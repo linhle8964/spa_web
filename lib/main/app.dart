@@ -49,11 +49,12 @@ class App extends ConsumerWidget {
           color: AppColors.backGround, //<-- SEE HERE
         ),
       ),
-      locale: const Locale('vi', 'VN'),
+      locale: const Locale.fromSubtags(languageCode: 'vi'),
+      supportedLocales: L10n.delegate.supportedLocales,
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.dashboardScreen,
       routes: Routes.routes,
-      localizationsDelegates: const [L10n.delegate],
+      localizationsDelegates: const [L10n.delegate,],
       navigatorObservers: const [],
       builder: (context, child) => GestureDetector(
         // dismiss keyboard when tap outside whole app

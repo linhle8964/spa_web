@@ -24,22 +24,34 @@ class ContactInfoWidget extends StatelessWidget {
   }
 
   Widget _logo(BuildContext context) {
-    return Expanded(child: Column(
-      children: [
-        Image.asset(Assets.images.icSpaLogo.path),
-        const SizedBox(height: 35),
-        Text('We don\'t keep our beauty secrets', style: AppTextStyle.regular,),
-      ],
-    ),);
+    return Expanded(
+      child: Column(
+        children: [
+          Image.asset(Assets.images.icSpaLogo.path),
+          const SizedBox(height: 35),
+          Text(
+            'We don\'t keep our beauty secrets',
+            style: AppTextStyle.regular,
+          ),
+        ],
+      ),
+    );
   }
 
   Widget _contact(BuildContext context) {
-    return Expanded(child: Column(
+    return Expanded(
+        child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(L10n.of(context).Contact, style: AppTextStyle.large,),
-        _contactRow(text: '120 west street,200 street Dhaka', icon: const Icon(Icons.location_on)),
-        _contactRow(text: 'info.example@gmail.com', icon: const Icon(Icons.email)),
+        Text(
+          L10n.of(context).Contact,
+          style: AppTextStyle.large,
+        ),
+        _contactRow(
+            text: '120 west street,200 street Dhaka',
+            icon: const Icon(Icons.location_on)),
+        _contactRow(
+            text: 'info.example@gmail.com', icon: const Icon(Icons.email)),
         _contactRow(text: '+0923793273', icon: const Icon(Icons.phone)),
       ],
     ));
@@ -52,7 +64,10 @@ class ContactInfoWidget extends StatelessWidget {
         children: [
           icon,
           const SizedBox(width: 10),
-          Text(text, style: AppTextStyle.regular,),
+          Text(
+            text,
+            style: AppTextStyle.regular,
+          ),
         ],
       ),
     );
@@ -63,7 +78,10 @@ class ContactInfoWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Hours', style: AppTextStyle.large,),
+          Text(
+            'Hours',
+            style: AppTextStyle.large,
+          ),
           _hourRow(title: 'Mon to Fri', content: '09 am- 6pm'),
           _hourRow(title: 'Sat', content: '10 am- 7pm'),
           _hourRow(title: 'Sun', content: '10 am- 7pm'),
@@ -77,8 +95,16 @@ class ContactInfoWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
         children: [
-          Expanded(child: Text('$title - ', style: AppTextStyle.regular,)),
-          Expanded(child: Text(content, style: AppTextStyle.regular,)),
+          Expanded(
+              child: Text(
+            '$title - ',
+            style: AppTextStyle.regular,
+          )),
+          Expanded(
+              child: Text(
+            content,
+            style: AppTextStyle.regular,
+          )),
         ],
       ),
     );
