@@ -17,3 +17,6 @@ class AboutUsModel with _$AboutUsModel {
   factory AboutUsModel.fromJson(Map<String, dynamic> json) =>
       _$AboutUsModelFromJson(json);
 }
+
+
+

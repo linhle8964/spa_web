@@ -16,7 +16,7 @@ class OurServiceWidget extends StatefulWidget {
 }
 
 class _OurServiceWidgetState extends State<OurServiceWidget> {
-  static const carouselHeight = 500.0;
+  static const carouselHeight = 600.0;
   late CarouselController carouselController;
 
   List<ServiceModel> dummyData = <ServiceModel>[

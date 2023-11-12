@@ -25,15 +25,9 @@ class ContactInfoWidget extends StatelessWidget {
 
   Widget _logo(BuildContext context) {
     return Expanded(
-      child: Column(
-        children: [
-          Image.asset(Assets.images.icSpaLogo.path),
-          const SizedBox(height: 35),
-          Text(
-            'We don\'t keep our beauty secrets',
-            style: AppTextStyle.regular,
-          ),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.only(right: 32),
+        child: Image.asset(Assets.images.icSpaLogo.path),
       ),
     );
   }
@@ -79,12 +73,12 @@ class ContactInfoWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Hours',
+            L10n.of(context).open_hour,
             style: AppTextStyle.large,
           ),
-          _hourRow(title: 'Mon to Fri', content: '09 am- 6pm'),
-          _hourRow(title: 'Sat', content: '10 am- 7pm'),
-          _hourRow(title: 'Sun', content: '10 am- 7pm'),
+          _hourRow(title: L10n.of(context).mon_to_fri, content: '09 am- 6pm'),
+          _hourRow(title: L10n.of(context).sat, content: '10 am- 7pm'),
+          _hourRow(title: L10n.of(context).sunday, content: '10 am- 7pm'),
         ],
       ),
     );

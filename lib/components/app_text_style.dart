@@ -24,10 +24,17 @@ class AppTextStyle {
     fontSize: 20,
   );
 
+  static const largeNormal = TextStyle(
+    fontFamily: FontFamily.playfairDisplay,
+    color: Colors.black,
+    fontWeight: FontWeight.normal,
+    fontSize: 20,
+  );
+
   static const extraLarge = TextStyle(
     fontFamily: FontFamily.playfairDisplay,
     color: Colors.black,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.normal,
     fontSize: 32,
   );
 }

@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:students/common/core/routes.dart';
+import 'package:students/components/app_text_style.dart';
 import 'package:students/generated/assets.gen.dart';
 import 'package:students/generated/l10n.dart';
 import 'package:students/screens/dashboard/widgets/spa_banner_menu_item.dart';
 
 class SpaBannerWidget extends StatelessWidget {
-  const SpaBannerWidget({super.key, required this.scrollController, required this.serviceKey, required this.aboutKey, required this.contactKey,});
+  const SpaBannerWidget({
+    super.key,
+    required this.scrollController,
+    required this.serviceKey,
+    required this.aboutKey,
+    required this.contactKey,
+  });
 
   final ScrollController scrollController;
   final GlobalKey serviceKey;
@@ -29,43 +38,45 @@ class SpaBannerWidget extends StatelessWidget {
                 children: [
                   Expanded(
                     flex: 3,
-                    child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Image.asset(Assets.images.icSpaLogo.path)),
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.2,
+                      alignment: Alignment.centerLeft,
+                      child: Image.asset(
+                        Assets.images.icSpaLogo.path,
+                      ),
+                    ),
                   ),
                   Expanded(
                     flex: 7,
                     child: Row(
                       children: [
                         SpaBannerMenuItem(
-                          text: L10n.of(context).Home, onTap: () {  },
+                          text: L10n.of(context).Home,
+                          onTap: () {
+                            context.go('/${Routes.dashboardScreen}');
+                          },
                         ),
                         SpaBannerMenuItem(
-                          text: L10n.of(context).Services,
-                          onTap: () {
-                          ensureVisible(serviceKey.currentContext);
-                          }
-                        ),
+                            text: L10n.of(context).Services,
+                            onTap: () {
+                              ensureVisible(serviceKey.currentContext);
+                            }),
                         SpaBannerMenuItem(
-                          text: L10n.of(context).About,
-                          onTap: () {
-                            ensureVisible(aboutKey.currentContext);
-                          }
-                        ),
+                            text: L10n.of(context).About,
+                            onTap: () {
+                              ensureVisible(aboutKey.currentContext);
+                            }),
                         SpaBannerMenuItem(
-                          text: L10n.of(context).Contact,
-                          onTap: () {
-                            ensureVisible(contactKey.currentContext);
-                          }
-                        ),
+                            text: L10n.of(context).Contact,
+                            onTap: () {
+                              ensureVisible(contactKey.currentContext);
+                            }),
                       ],
                     ),
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 90,
-              ),
+              const SizedBox(height: 40),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
                 child: Column(
@@ -73,12 +84,12 @@ class SpaBannerWidget extends StatelessWidget {
                   children: [
                     Text(
                       L10n.of(context).banner_title,
-                      style: TextStyle(color: Colors.black, fontSize: 32),
+                      style: AppTextStyle.extraLarge,
                     ),
                     const SizedBox(height: 34),
                     Text(
                       L10n.of(context).banner_content,
-                      style: TextStyle(color: Colors.black, fontSize: 16),
+                      style: AppTextStyle.medium,
                     ),
                   ],
                 ),
@@ -91,7 +102,7 @@ class SpaBannerWidget extends StatelessWidget {
   }
 
   void ensureVisible(BuildContext? context) {
-    if(context == null) {
+    if (context == null) {
       return;
     }
 
@@ -101,5 +112,4 @@ class SpaBannerWidget extends StatelessWidget {
       curve: Curves.easeInOut,
     );
   }
-
 }

@@ -1,16 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:students/screens/about_us/about_us_screen.dart';
 
 import 'package:students/screens/dashboard/dashboard_screen.dart';
 
 /// The Routes class contains static constants and a map of named routes to widget builders for
 /// navigation in a Flutter app.
 class Routes {
-  static const dashboardScreen = '/dashboard_screen';
+  static const dashboardScreen = 'dashboard_screen';
+  static const aboutUsScreen = 'about_us_screen';
 
-  static final Map<String, WidgetBuilder> routes = {
-    '/': (context) => defaultRoute(),
-    dashboardScreen: (context) => const DashBoardScreen(),
-  };
+  static final GoRouter routes =  GoRouter(
+    routes: <RouteBase>[
+      GoRoute(
+        path: '/',
+        builder: (BuildContext context, GoRouterState state) {
+          return const DashBoardScreen();
+        },
+        routes: <RouteBase>[
+          GoRoute(
+            path: dashboardScreen,
+            builder: (BuildContext context, GoRouterState state) {
+              return const DashBoardScreen();
+            },
+          ),
+          GoRoute(
+            path: aboutUsScreen,
+            builder: (BuildContext context, GoRouterState state) {
+              return const AboutUsScreen();
+            },
+          ),
+        ],
+      ),
+    ],
+  );
 
   static defaultRoute() => Scaffold(
         body: Column(

@@ -35,8 +35,8 @@ class App extends ConsumerWidget {
     // initialize flutter local notification
     // NotificationUtil.initialize(context);
 
-    return MaterialApp(
-      navigatorKey: Constants.navigatorKey,
+    return MaterialApp.router(
+     // navigatorKey: Constants.navigatorKey,
       scaffoldMessengerKey: Constants.snackBarKey,
       themeMode: ThemeMode.system,
       theme: ThemeData(
@@ -52,10 +52,10 @@ class App extends ConsumerWidget {
       locale: const Locale.fromSubtags(languageCode: 'vi'),
       supportedLocales: L10n.delegate.supportedLocales,
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.dashboardScreen,
-      routes: Routes.routes,
+     // initialRoute: Routes.dashboardScreen,
+      routerConfig: Routes.routes,
       localizationsDelegates: const [L10n.delegate,],
-      navigatorObservers: const [],
+     // navigatorObservers: const [],
       builder: (context, child) => GestureDetector(
         // dismiss keyboard when tap outside whole app
         onTap: () =>
