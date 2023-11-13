@@ -43,4 +43,11 @@ class AppTextStyle {
     fontWeight: FontWeight.normal,
     fontSize: 32,
   );
+
+  static const superLarge = TextStyle(
+    fontFamily: FontFamily.playfairDisplay,
+    color: Colors.black,
+    fontWeight: FontWeight.normal,
+    fontSize: 64,
+  );
 }

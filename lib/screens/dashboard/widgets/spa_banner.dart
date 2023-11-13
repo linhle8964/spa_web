@@ -27,9 +27,10 @@ class SpaBannerWidget extends StatelessWidget {
         Image.asset(
           Assets.images.bannerImage.path,
           width: double.infinity,
+          fit: BoxFit.cover,
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 56, horizontal: 90),
+          padding: const EdgeInsets.symmetric(vertical: 56, horizontal: 120),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

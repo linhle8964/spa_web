@@ -51,17 +51,17 @@ class App extends ConsumerWidget {
       ),
       locale: const Locale.fromSubtags(languageCode: 'vi'),
       supportedLocales: L10n.delegate.supportedLocales,
-      debugShowCheckedModeBanner: false,
+    //  debugShowCheckedModeBanner: false,
      // initialRoute: Routes.dashboardScreen,
       routerConfig: Routes.routes,
       localizationsDelegates: const [L10n.delegate,],
      // navigatorObservers: const [],
-      builder: (context, child) => GestureDetector(
-        // dismiss keyboard when tap outside whole app
-        onTap: () =>
-            WidgetsBinding.instance.focusManager.primaryFocus?.unfocus(),
-        child: child,
-      ),
+      builder: (context, child) {
+        if(child != null) {
+          return child;
+        }
+        return const SizedBox();
+      },
     );
   }
 }
