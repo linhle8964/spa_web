@@ -16,7 +16,7 @@ class OurServiceWidget extends StatefulWidget {
 }
 
 class _OurServiceWidgetState extends State<OurServiceWidget> {
-  static const carouselHeight = 600.0;
+  static const carouselHeight = 400.0;
   late CarouselController carouselController;
 
   List<ServiceModel> dummyData = <ServiceModel>[
@@ -74,14 +74,14 @@ class _OurServiceWidgetState extends State<OurServiceWidget> {
   Widget build(BuildContext context) {
     return Padding(
       key: widget.serviceKey,
-      padding: const EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.symmetric(vertical: 60),
       child: Column(
         children: [
           Text(
             L10n.of(context).Services,
             style: AppTextStyle.extraLarge,
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 60),
           CarouselSlider.builder(
             carouselController: carouselController,
             itemCount: dummyData.length,
@@ -95,8 +95,8 @@ class _OurServiceWidgetState extends State<OurServiceWidget> {
             options: CarouselOptions(
               height: carouselHeight,
               autoPlay: true,
-              aspectRatio: 4/3,
-              viewportFraction: 0.8,
+              aspectRatio: 800/600,
+              viewportFraction: 0.5,
             ),
           ),
         ],

@@ -1,7 +1,6 @@
 import 'dart:js' as js;
 import 'package:flutter/material.dart';
 import 'package:students/generated/assets.gen.dart';
-import 'package:students/utils/app_colors.dart';
 
 class SocialMediaIconWidget extends StatefulWidget {
   const SocialMediaIconWidget({
@@ -26,7 +25,7 @@ class _SocialMediaIconWidgetState extends State<SocialMediaIconWidget> {
       padding: const EdgeInsets.all(8),
       margin: const EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
-        color: isHoover ? AppColors.backGround2 : Colors.transparent,
+        color: isHoover ? Colors.white : Colors.transparent,
         borderRadius: BorderRadius.circular(8)
       ),
       child: MouseRegion(

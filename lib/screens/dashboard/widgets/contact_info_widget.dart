@@ -2,22 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:students/components/app_text_style.dart';
 import 'package:students/generated/assets.gen.dart';
 import 'package:students/generated/l10n.dart';
+import 'package:students/screens/dashboard/widgets/follow_us_widget.dart';
 
 class ContactInfoWidget extends StatelessWidget {
-  const ContactInfoWidget({super.key, required this.contactKey});
+  const ContactInfoWidget({super.key, this.contactKey});
 
-  final GlobalKey contactKey;
+  final GlobalKey? contactKey;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       key: contactKey,
       padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Row(
+      child: Column(
         children: [
-          _logo(context),
-          _contact(context),
-          _hour(context),
+          Row(
+            children: [
+              _logo(context),
+              _contact(context),
+              _hour(context),
+            ],
+          ),
+          const FollowUsWidget(),
         ],
       ),
     );

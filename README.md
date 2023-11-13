@@ -35,16 +35,16 @@ sh run.sh
 ### Debug
 
 ```shell script
-flutter run --debug --flavor development -t lib/main/main_development.dart
-flutter run --debug --flavor staging -t lib/main/main_staging.dart
-flutter run --debug --flavor production -t lib/main/main_production.dart
+flutter run --debug --flavor development -t lib/main/main_development.dart --web-renderer html
+flutter run --debug --flavor staging -t lib/main/main_staging.dart --web-renderer html
+flutter run --debug --flavor production -t lib/main/main_production.dart --web-renderer html
 ```
 
 ### Release
 
 ```shell script
-flutter run --release --flavor development -t lib/main/main_development.dart
-flutter run --release --flavor production -t lib/main/main_production.dart
+flutter run --release --flavor development -t lib/main/main_development.dart --web-renderer html
+flutter run --release --flavor production -t lib/main/main_production.dart --web-renderer html
 ```
 
 # How to build

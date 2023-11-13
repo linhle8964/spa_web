@@ -18,7 +18,7 @@ class AppTextStyle {
   );
 
   static const large = TextStyle(
-    fontFamily: FontFamily.playfairDisplay,
+    fontFamily: FontFamily.playfairDisplayBold,
     color: Colors.black,
     fontWeight: FontWeight.bold,
     fontSize: 20,
@@ -28,6 +28,12 @@ class AppTextStyle {
     fontFamily: FontFamily.playfairDisplay,
     color: Colors.black,
     fontWeight: FontWeight.normal,
+    fontSize: 20,
+  );
+
+  static const largeItalic = TextStyle(
+    fontFamily: FontFamily.playfairDisplayItalic,
+    color: Colors.black,
     fontSize: 20,
   );
 

@@ -16,8 +16,7 @@ class _AboutUsListViewState extends State<AboutUsListView> {
     const list = AppConstants.dummyAboutModel;
 
     return ListView.separated(
-        padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.of(context).size.width * 0.2),
+        padding: const EdgeInsets.all(64),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (ctx, index) {
@@ -28,24 +27,26 @@ class _AboutUsListViewState extends State<AboutUsListView> {
             children: [
               Text(
                 title ?? '',
-                style: AppTextStyle.largeNormal,
+                style: AppTextStyle.largeItalic,
+                textAlign: TextAlign.center,
               ),
               SizedBox(
-                height: title == null ? 0 : 20,
+                height: title == null ? 0 : 32,
               ),
               index % 2 == 0
                   ? Row(
                       children: [
                         Expanded(
-                          flex: 2,
+                          flex: 3,
                           child: Text(
                             item.text ?? '',
                             style: AppTextStyle.largeNormal,
+                            textAlign: TextAlign.center,
                           ),
                         ),
                         const Spacer(),
                         Expanded(
-                          flex: 2,
+                          flex: 3,
                           child: CachedNetworkImage(
                             imageUrl: item.image ?? '',
                           ),
@@ -55,17 +56,18 @@ class _AboutUsListViewState extends State<AboutUsListView> {
                   : Row(
                       children: [
                         Expanded(
-                          flex: 2,
+                          flex: 3,
                           child: CachedNetworkImage(
                             imageUrl: item.image ?? '',
                           ),
                         ),
                         const Spacer(),
                         Expanded(
-                          flex: 2,
+                          flex: 3,
                           child: Text(
                             item.text ?? '',
                             style: AppTextStyle.largeNormal,
+                            textAlign: TextAlign.center,
                           ),
                         ),
                       ],

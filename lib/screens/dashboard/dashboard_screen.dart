@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:students/screens/dashboard/widgets/about_us_widget.dart';
 import 'package:students/screens/dashboard/widgets/contact_info_widget.dart';
-import 'package:students/screens/dashboard/widgets/follow_us_widget.dart';
 import 'package:students/screens/dashboard/widgets/our_service_widget.dart';
 import 'package:students/screens/dashboard/widgets/spa_banner.dart';
+import 'package:students/utils/app_colors.dart';
 import 'package:students/utils/utils.dart';
 
 class DashBoardArg {
@@ -44,6 +44,7 @@ class _DashBoardScreenState extends ConsumerState<DashBoardScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.backGround,
       floatingActionButton: Container(
         padding: const EdgeInsets.all(12),
         decoration: const BoxDecoration(
@@ -77,7 +78,6 @@ class _DashBoardScreenState extends ConsumerState<DashBoardScreen>
             ContactInfoWidget(
               contactKey: contactKey,
             ),
-            const FollowUsWidget(),
           ],
         ),
       ),

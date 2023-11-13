@@ -37,7 +37,7 @@ class _SpaBannerMenuItemState extends State<SpaBannerMenuItem> {
             alignment: Alignment.center,
             child: Text(
               widget.text,
-              style: AppTextStyle.large.copyWith(fontWeight: FontWeight.normal),
+              style: AppTextStyle.largeNormal,
             ),
           ),
         ),

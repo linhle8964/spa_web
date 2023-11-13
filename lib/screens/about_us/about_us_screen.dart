@@ -3,6 +3,8 @@ import 'package:students/components/app_text_style.dart';
 import 'package:students/generated/l10n.dart';
 import 'package:students/screens/about_us/widgets/about_us_list_view.dart';
 import 'package:students/screens/about_us/widgets/about_us_video.dart';
+import 'package:students/screens/dashboard/widgets/contact_info_widget.dart';
+import 'package:students/utils/app_colors.dart';
 
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({super.key});
@@ -10,6 +12,7 @@ class AboutUsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.backGround,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -19,6 +22,7 @@ class AboutUsScreen extends StatelessWidget {
               style: AppTextStyle.extraLarge,
             ),
             const AboutUsListView(),
+            const ContactInfoWidget(),
           ],
         ),
       ),

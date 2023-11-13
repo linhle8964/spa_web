@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   AppColors._();
-  static const backGround = Color(0xfffff8f0);
+  static const backGround = Color(0xffF0EAE2);
   static const backGround2 = Color(0xffFFE7DD);
   static const backGround3 = Color(0xfffef8f8);
   static const bgNav = Color(0xffc8d2a0);
