@@ -62,3 +62,8 @@ flutter build appbundle --release --flavor production -t lib/main/main_productio
 ```shell script
 flutter build ios --release --no-codesign --flavor production -t lib/main/main_production.dart; cd ios; fastlane publish_production; cd -
 ```
+
+### Web
+```shell script
+flutter build web --base-href /spa_web_dev/ --release -t lib/main/main_development.dart --web-renderer html
+```
