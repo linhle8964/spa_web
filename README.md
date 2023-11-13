@@ -65,5 +65,5 @@ flutter build ios --release --no-codesign --flavor production -t lib/main/main_p
 
 ### Web
 ```shell script
-flutter build web --base-href /spa_web_dev/ --release -t lib/main/main_development.dart --web-renderer html
+flutter build web --base-href /spa_web/ --release -t lib/main/main_development.dart --web-renderer html
 ```
