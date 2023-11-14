@@ -9,10 +9,17 @@
     "banner_content": "Dedicated to personal wellness, Amanjena’s spa facilities are serene and timeless, designed to calm, soothe and rejuvenate while expert therapists work on restoring optimal wellbeing. Treatments include massages, facials scrubs and wraps, as well as manicures and pedicures. ",
     "follow_us_on": "Follow us on",
     "open_hour": "Open hour",
-    "mon_to_fri": "Thứ 2 đến Thứ 6",
+    "mon_to_fri": "Monday to Friday",
     "sat": "Sat",
     "sunday": "Sun",
     "blog": "Blog",
     "read_more": "Read more",
-    "spa_name": "Ngọt"
+    "spa_name": "Ngọt",
+    "please_enter_your_name_here": "Please enter your name here",
+    "full_name": "Full Name",
+    "please_enter_your_phone_here": "Please enter your phone here",
+    "phone": "Phone Number",
+    "reverse_date": "Reverse Date",
+    "reverse_time": "Reverse Time",
+    "submit": "Submit"
 }

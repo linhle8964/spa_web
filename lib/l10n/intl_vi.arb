@@ -14,5 +14,12 @@
     "sunday": "Chủ nhật",
     "blog": "Blog",
     "read_more": "Đọc thêm chi tiết",
-    "spa_name": "Ngọt"
+    "spa_name": "Ngọt",
+    "please_enter_your_name_here": "Xin hãy điền tên bạn vào đây",
+    "full_name": "Họ và tên",
+    "please_enter_your_phone_here": "Xin hãy điền số điện thoại của bạn vào đây",
+    "phone": "SĐT",
+    "reverse_date": "Ngày hẹn",
+    "reverse_time": "Giờ hẹn",
+    "submit": "Gửi"
 }

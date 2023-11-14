@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:students/api/api_client.dart';
 import 'package:students/common/core/constants.dart';
@@ -49,12 +50,16 @@ class App extends ConsumerWidget {
           color: AppColors.backGround, //<-- SEE HERE
         ),
       ),
-      locale: const Locale.fromSubtags(languageCode: 'vi'),
+      locale: L10n.delegate.supportedLocales[1],
       supportedLocales: L10n.delegate.supportedLocales,
     //  debugShowCheckedModeBanner: false,
      // initialRoute: Routes.dashboardScreen,
       routerConfig: Routes.routes,
-      localizationsDelegates: const [L10n.delegate,],
+      localizationsDelegates: const [L10n.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
      // navigatorObservers: const [],
       builder: (context, child) {
         if(child != null) {

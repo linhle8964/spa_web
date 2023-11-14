@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:students/screens/about_us/about_us_screen.dart';
+import 'package:students/screens/booking/booking_screen.dart';
 
 import 'package:students/screens/dashboard/dashboard_screen.dart';
 
@@ -9,6 +10,7 @@ import 'package:students/screens/dashboard/dashboard_screen.dart';
 class Routes {
   static const dashboardScreen = 'dashboard_screen';
   static const aboutUsScreen = 'about_us_screen';
+  static const bookingScreen = 'booking_screen';
 
   static final GoRouter routes =  GoRouter(
     routes: <RouteBase>[
@@ -30,15 +32,21 @@ class Routes {
               return const AboutUsScreen();
             },
           ),
+          GoRoute(
+            path: bookingScreen,
+            builder: (BuildContext context, GoRouterState state) {
+              return const BookingScreen();
+            },
+          ),
         ],
       ),
     ],
   );
 
-  static defaultRoute() => Scaffold(
+  static defaultRoute() => const Scaffold(
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Center(
               child: Text(
                 'Sorry for the unexpected problem !',

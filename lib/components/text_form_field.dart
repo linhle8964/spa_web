@@ -4,7 +4,7 @@ import 'package:students/utils/app_text_style.dart';
 
 class TextFormFieldCustom extends StatelessWidget {
   const TextFormFieldCustom({
-    Key? key,
+    super.key,
     required this.controller,
     this.textInputAction = TextInputAction.done,
     this.keyboardType = TextInputType.text,
@@ -13,7 +13,7 @@ class TextFormFieldCustom extends StatelessWidget {
     this.onEditingComplete,
     this.obscureText = false,
     this.hintText,
-  }) : super(key: key);
+  });
   final TextEditingController controller;
   final TextInputAction? textInputAction;
   final TextInputType? keyboardType;

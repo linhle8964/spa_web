@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:students/common/core/routes.dart';
+import 'package:students/components/common_navigator.dart';
 
 class ReverseButton extends StatelessWidget {
   const ReverseButton({super.key});
@@ -12,7 +14,9 @@ class ReverseButton extends StatelessWidget {
         color: Colors.black,
       ),
       child: IconButton(
-        onPressed: () {},
+        onPressed: () {
+          CommonNavigator.go(context, routeName: Routes.bookingScreen);
+        },
         icon: const Icon(
           Icons.calendar_month,
         ),

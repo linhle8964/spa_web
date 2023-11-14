@@ -6,7 +6,9 @@ import 'package:students/generated/l10n.dart';
 import 'package:students/utils/app_colors.dart';
 
 class CommonHeader extends StatelessWidget {
-  const CommonHeader({super.key});
+  const CommonHeader({super.key, this.haveReverseButton = true,});
+
+  final bool haveReverseButton;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class CommonHeader extends StatelessWidget {
         children: [
           Expanded(child: Image.asset(Assets.images.icSpaLogo.path, height: 120,)),
           Expanded(child: Text(L10n.of(context).spa_name, style: AppTextStyle.superLarge, textAlign: TextAlign.center,)),
-          const Expanded(child: ReverseButton()),
+          haveReverseButton ? const Expanded(child: ReverseButton()) : const Spacer(),
         ],
       ),
     );

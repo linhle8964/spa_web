@@ -4,10 +4,10 @@ import 'package:students/utils/app_text_style.dart';
 
 class CommonErrorIndicator extends StatelessWidget {
   const CommonErrorIndicator({
-    Key? key,
+    super.key,
     this.message,
     this.onTapRetry,
-  }) : super(key: key);
+  });
   final String? message;
   final VoidCallback? onTapRetry;
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:students/common/core/routes.dart';
 import 'package:students/components/app_text_style.dart';
+import 'package:students/components/common_navigator.dart';
 import 'package:students/generated/assets.gen.dart';
 import 'package:students/generated/l10n.dart';
 import 'package:students/utils/app_colors.dart';
@@ -71,7 +71,7 @@ class AboutUsWidget extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              context.go('/${Routes.aboutUsScreen}');
+              CommonNavigator.go(context, routeName: Routes.aboutUsScreen);
             },
             child: Text(
               '>> ${L10n.of(context).read_more}',

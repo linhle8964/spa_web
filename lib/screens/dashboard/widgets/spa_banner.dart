@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:students/common/core/routes.dart';
 import 'package:students/components/app_text_style.dart';
+import 'package:students/components/common_navigator.dart';
 import 'package:students/generated/assets.gen.dart';
 import 'package:students/generated/l10n.dart';
 import 'package:students/screens/dashboard/widgets/spa_banner_menu_item.dart';
@@ -54,7 +54,7 @@ class SpaBannerWidget extends StatelessWidget {
                         SpaBannerMenuItem(
                           text: L10n.of(context).Home,
                           onTap: () {
-                            context.go('/${Routes.dashboardScreen}');
+                            CommonNavigator.go(context, routeName: Routes.dashboardScreen);
                           },
                         ),
                         SpaBannerMenuItem(
