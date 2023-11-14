@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:students/generated/assets.gen.dart';
+import 'package:students/components/app_text_style.dart';
+import 'package:students/utils/app_colors.dart';
 
 class CommonAppbar extends PreferredSize {
   CommonAppbar({
     String? title,
     String? subtitle,
     super.key,
-    bool showBackButton = false,
     bool centerTitle = true,
     void Function()? onTapBack,
     Widget? leadingWidget,
@@ -18,7 +17,6 @@ class CommonAppbar extends PreferredSize {
     PreferredSizeWidget? bottom,
     Color? color,
     Color? titleColor,
-    Color? backButtonColor,
   }) : super(
           child: AppBar(
             bottom: bottom,
@@ -26,13 +24,14 @@ class CommonAppbar extends PreferredSize {
             elevation: elevation ?? 0,
             actions: actions != null ? [...actions] : null,
             systemOverlayStyle: SystemUiOverlayStyle.dark,
-            backgroundColor: color ?? Colors.white,
+            backgroundColor: color ?? AppColors.backGround,
             // TODO(Dyan): handle text style
             title: titleWidget ??
                 Column(
                   children: [
                     Text(
                       title ?? '',
+                      style: AppTextStyle.extraLarge,
                     ),
                     if (subtitle != null)
                       Text(
@@ -40,46 +39,12 @@ class CommonAppbar extends PreferredSize {
                       ),
                   ],
                 ),
-            leading: showBackButton
-                ? BackButtonCustom(
-                    onTapBack: onTapBack,
-                    color: backButtonColor,
-                  )
-                : leadingWidget ?? const SizedBox(),
+            leading: leadingWidget ?? const SizedBox(),
           ),
           preferredSize: bottom != null
-              ? const Size.fromHeight(80)
-              : const Size.fromHeight(44),
+              ? const Size.fromHeight(160)
+              : const Size.fromHeight(100),
         );
 }
 
-class BackButtonCustom extends StatelessWidget {
-  const BackButtonCustom({
-    super.key,
-    this.onTapBack,
-    this.color,
-  });
 
-  final void Function()? onTapBack;
-  final Color? color;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTapBack ?? () => Navigator.pop(context),
-      child: Container(
-        alignment: Alignment.center,
-        padding: const EdgeInsets.all(12),
-        margin: const EdgeInsets.only(left: 8),
-
-        // TODO(Dyan): handle icon back in appbar
-        child: SvgPicture.asset(
-          Assets.svg.icBackIos.path,
-          height: 45,
-          fit: BoxFit.contain,
-          color: color,
-        ),
-      ),
-    );
-  }
-}

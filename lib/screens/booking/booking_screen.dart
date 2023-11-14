@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:students/components/common_scaffold.dart';
 import 'package:students/screens/booking/booking_state_notifier.dart';
 import 'package:students/screens/booking/widgets/booking_body.dart';
-import 'package:students/screens/dashboard/widgets/common_header.dart';
-import 'package:students/utils/app_colors.dart';
 
 class BookingScreen extends ConsumerStatefulWidget {
   const BookingScreen({super.key});
@@ -50,28 +49,12 @@ class _BookingScreenState extends ConsumerState<BookingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.backGround,
+    return CommonScaffold(
+      haveReverseButton: false,
       body: Form(
-        child: Column(
-          children: [
-            const CommonHeader(
-              haveReverseButton: false,
-            ),
-            Row(
-              children: [
-                const Spacer(),
-                Expanded(
-                  flex: 3,
-                  child: BookingBody(
-                    nameController: nameController,
-                    phoneController: phoneController,
-                  ),
-                ),
-                const Spacer(),
-              ],
-            )
-          ],
+        child: BookingBody(
+          nameController: nameController,
+          phoneController: phoneController,
         ),
       ),
     );

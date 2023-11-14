@@ -1,8 +1,11 @@
+import 'dart:js' as js;
 import 'package:flutter/material.dart';
 import 'package:students/components/app_text_style.dart';
 import 'package:students/generated/assets.gen.dart';
 import 'package:students/generated/l10n.dart';
 import 'package:students/screens/dashboard/widgets/follow_us_widget.dart';
+import 'package:students/utils/app_colors.dart';
+import 'package:students/utils/app_constant.dart';
 
 class ContactInfoWidget extends StatelessWidget {
   const ContactInfoWidget({super.key, this.contactKey});
@@ -11,29 +14,57 @@ class ContactInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       key: contactKey,
+      color: AppColors.backGround2,
       padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Column(
+      margin: const EdgeInsets.symmetric(vertical: 20),
+      child: Row(
         children: [
-          Row(
-            children: [
-              _logo(context),
-              _contact(context),
-              _hour(context),
-            ],
+          const Spacer(),
+          Expanded(
+            flex: 3,
+            child: Column(
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _contact(context),
+                    _hour(context),
+                  ],
+                ),
+                const SizedBox(height: 30),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    _map(context),
+                    const Expanded(child: FollowUsWidget()),
+                  ],
+                ),
+                const SizedBox(height: 30),
+              ],
+            ),
           ),
-          const FollowUsWidget(),
+          const Spacer(),
         ],
       ),
     );
   }
 
-  Widget _logo(BuildContext context) {
+  Widget _map(BuildContext context) {
     return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.only(right: 32),
-        child: Image.asset(Assets.images.icSpaLogo.path),
+      child: GestureDetector(
+        onTap: () {
+          js.context.callMethod('open', [AppConstants.locationUrl]);
+        },
+        child: Container(
+          alignment: Alignment.centerLeft,
+          child: Image.asset(
+            Assets.images.spaLocation.path,
+            height: MediaQuery.of(context).size.height * 0.25,
+          ),
+        ),
       ),
     );
   }

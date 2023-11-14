@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:students/components/app_text_style.dart';
+import 'package:students/components/common_button.dart';
 import 'package:students/components/show_dialog_btn.dart';
 import 'package:students/generated/l10n.dart';
 import 'package:students/screens/booking/booking_state_notifier.dart';
@@ -89,6 +90,8 @@ class BookingBody extends ConsumerWidget {
             ),
           ],
         ),
+        const SizedBox(height: 32),
+        CommonButton(onTap: () {}, label: L10n.of(context).submit,),
       ],
     );
   }
