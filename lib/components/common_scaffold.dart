@@ -29,18 +29,23 @@ class _CommonScaffoldState extends State<CommonScaffold> {
               haveReverseButton: widget.haveReverseButton,
             ),
             Expanded(
-              child: Row(
-                children: [
-                  const Spacer(),
-                  Expanded(
-                    flex: 3,
-                    child: SingleChildScrollView(child: widget.body),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          const Spacer(),
+                          Expanded(
+                            flex: 3,
+                            child: SingleChildScrollView(child: widget.body),
+                          ),
+                          const Spacer(),
+                        ],
+                      ),
+                      const ContactInfoWidget(),
+                    ],
                   ),
-                  const Spacer(),
-                ],
-              ),
-            ),
-            const ContactInfoWidget(),
+                ),),
           ],
         ),
       ),
