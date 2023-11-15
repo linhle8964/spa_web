@@ -12,28 +12,34 @@ class FollowUsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 32),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             '${L10n.of(context).follow_us_on}:',
             style: AppTextStyle.medium,
           ),
-          SocialMediaIconWidget(
-            assetGenImage: Assets.socialMediaIcon.icFb,
-            url: AppConstants.fbUrl,
-          ),
-          SocialMediaIconWidget(
-            assetGenImage: Assets.socialMediaIcon.icX,
-            url: AppConstants.twitterUrl,
-          ),
-          SocialMediaIconWidget(
-            assetGenImage: Assets.socialMediaIcon.icInsta,
-            url: AppConstants.instagramUrl,
-          ),
-          SocialMediaIconWidget(
-            assetGenImage: Assets.socialMediaIcon.icYt,
-            url: AppConstants.ytUrl,
+          const SizedBox(height: 32),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SocialMediaIconWidget(
+                assetGenImage: Assets.socialMediaIcon.icFb,
+                url: AppConstants.fbUrl,
+              ),
+              SocialMediaIconWidget(
+                assetGenImage: Assets.socialMediaIcon.icX,
+                url: AppConstants.twitterUrl,
+              ),
+              SocialMediaIconWidget(
+                assetGenImage: Assets.socialMediaIcon.icInsta,
+                url: AppConstants.instagramUrl,
+              ),
+              SocialMediaIconWidget(
+                assetGenImage: Assets.socialMediaIcon.icYt,
+                url: AppConstants.ytUrl,
+              ),
+            ],
           ),
         ],
       ),

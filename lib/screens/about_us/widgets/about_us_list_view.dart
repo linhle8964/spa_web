@@ -16,7 +16,7 @@ class _AboutUsListViewState extends State<AboutUsListView> {
     const list = AppConstants.dummyAboutModel;
 
     return ListView.separated(
-        padding: const EdgeInsets.all(64),
+        padding: const EdgeInsets.symmetric(vertical: 64),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (ctx, index) {

@@ -5,6 +5,7 @@ import 'package:students/components/common_navigator.dart';
 import 'package:students/generated/assets.gen.dart';
 import 'package:students/generated/l10n.dart';
 import 'package:students/utils/app_colors.dart';
+import 'package:students/utils/app_constant.dart';
 
 class AboutUsWidget extends StatelessWidget {
   const AboutUsWidget({
@@ -45,30 +46,22 @@ class AboutUsWidget extends StatelessWidget {
             L10n.of(context).About,
             style: AppTextStyle.extraLarge,
           ),
-          SizedBox(
-            height: 16,
-          ),
+          const SizedBox(height: 16),
           Text(
-            'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,',
+            AppConstants.dummyAboutModel.first.text ?? '',
             style: AppTextStyle.regular,
           ),
-          SizedBox(
-            height: 16,
-          ),
-          Text(
-            'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,',
-            style: AppTextStyle.regular,
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          Text(
-            'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,',
-            style: AppTextStyle.regular,
-          ),
-          SizedBox(
-            height: 16,
-          ),
+          const SizedBox(height: 16),
+          // Text(
+          //   'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,',
+          //   style: AppTextStyle.regular,
+          // ),
+          // const SizedBox(height: 16),
+          // Text(
+          //   'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,',
+          //   style: AppTextStyle.regular,
+          // ),
+          // const SizedBox(height: 16),
           TextButton(
             onPressed: () {
               CommonNavigator.go(context, routeName: Routes.aboutUsScreen);

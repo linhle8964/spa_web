@@ -21,5 +21,6 @@
     "phone": "Phone Number",
     "reverse_date": "Reverse Date",
     "reverse_time": "Reverse Time",
-    "submit": "Submit"
+    "submit": "Submit",
+    "reverse": "Reverse"
 }

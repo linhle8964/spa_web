@@ -22,6 +22,11 @@ class BookingBody extends ConsumerWidget {
 
     return Column(
       children: [
+        Text(
+          L10n.of(context).reverse,
+          style: AppTextStyle.extraLarge,
+        ),
+        const SizedBox(height: 64,),
         TextFormField(
           controller: nameController,
           decoration: InputDecoration(

@@ -1,9 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:students/components/show_modal_bottom_sheet.dart';
-import 'package:students/generated/assets.gen.dart';
 import 'package:students/utils/app_colors.dart';
 import 'package:students/utils/datetime_extention.dart';
 import 'package:students/utils/utils.dart';
@@ -75,10 +73,10 @@ class _CalenderItemState extends State<CalenderItem> with Utils {
                   },
                   child: Column(
                     children: [
-                      SvgPicture.asset(
-                        Assets.svg.icDatePicker.path,
-                        height: 15,
-                      ),
+                      // SvgPicture.asset(
+                      //   Assets.svg.icDatePicker.path,
+                      //   height: 15,
+                      // ),
                       Text('${initMonth?.month ?? currentTime.month}'),
                     ],
                   ),
