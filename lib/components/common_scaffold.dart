@@ -8,11 +8,13 @@ class CommonScaffold extends StatefulWidget {
   const CommonScaffold({
     super.key,
     this.haveReverseButton = true,
+    this.scrollController,
     required this.body,
   });
 
   final bool haveReverseButton;
   final Widget body;
+  final ScrollController? scrollController;
 
   @override
   State<CommonScaffold> createState() => _CommonScaffoldState();
@@ -31,6 +33,7 @@ class _CommonScaffoldState extends State<CommonScaffold> {
             ),
             Expanded(
               child: SingleChildScrollView(
+                controller: widget.scrollController,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

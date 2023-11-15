@@ -63,6 +63,11 @@ class SpaBannerWidget extends StatelessWidget {
                               ensureVisible(serviceKey.currentContext);
                             }),
                         SpaBannerMenuItem(
+                            text: L10n.of(context).blog,
+                            onTap: () {
+                              CommonNavigator.go(context, routeName: Routes.blogScreen);
+                            }),
+                        SpaBannerMenuItem(
                             text: L10n.of(context).About,
                             onTap: () {
                               ensureVisible(aboutKey.currentContext);
