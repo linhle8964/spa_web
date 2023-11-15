@@ -14,6 +14,7 @@ class BookingScreen extends ConsumerStatefulWidget {
 class _BookingScreenState extends ConsumerState<BookingScreen> {
   late TextEditingController phoneController;
   late TextEditingController nameController;
+  final _formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -52,9 +53,11 @@ class _BookingScreenState extends ConsumerState<BookingScreen> {
     return CommonScaffold(
       haveReverseButton: false,
       body: Form(
+        key: _formKey,
         child: BookingBody(
           nameController: nameController,
           phoneController: phoneController,
+          formKey: _formKey,
         ),
       ),
     );

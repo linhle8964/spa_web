@@ -54,15 +54,18 @@ class ContactInfoWidget extends StatelessWidget {
 
   Widget _map(BuildContext context) {
     return Expanded(
-      child: GestureDetector(
-        onTap: () {
-          js.context.callMethod('open', [AppConstants.locationUrl]);
-        },
-        child: Container(
-          alignment: Alignment.centerLeft,
-          child: Image.asset(
-            Assets.images.spaLocation.path,
-            height: MediaQuery.of(context).size.height * 0.25,
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: GestureDetector(
+          onTap: () {
+            js.context.callMethod('open', [AppConstants.locationUrl]);
+          },
+          child: Container(
+            alignment: Alignment.centerLeft,
+            child: Image.asset(
+              Assets.images.spaLocation.path,
+              height: MediaQuery.of(context).size.height * 0.25,
+            ),
           ),
         ),
       ),
@@ -79,7 +82,7 @@ class ContactInfoWidget extends StatelessWidget {
           style: AppTextStyle.large,
         ),
         _contactRow(
-            text: '120 west street,200 street Dhaka',
+            text: 'Ngõ 44 P. Nguyễn Cơ Thạch, Mỹ Đình, Từ Liêm, Hà Nội',
             icon: const Icon(Icons.location_on)),
         _contactRow(
             text: 'info.example@gmail.com', icon: const Icon(Icons.email)),
